@@ -1,8 +1,11 @@
 {
   "name": "numbat-dash",
-  "version": "0.0.0",
   "description": "dashboard/alert/monitor for the numbat-powered metrics system",
-  "main": "index.js",
+  "version": "0.0.0",
+  "author": "C J Silverio <ceejceej@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/ceejbot/numbat-emitter/issues"
+  },
   "dependencies": {
     "bluebird": "^1.2.4",
     "express": "^4.3.1",
@@ -12,11 +15,9 @@
     "toml-require": "^1.0.1"
   },
   "devDependencies": {
+    "browserify": "^4.1.5",
     "lab": "^3.2.1",
     "must": "^0.11.0"
-  },
-  "scripts": {
-    "test": "lab -v -c test/test*.js"
   },
   "keywords": [
     "numbat",
@@ -25,6 +26,13 @@
     "metrics",
     "alerting"
   ],
-  "author": "C J Silverio <ceejceej@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ceejbot/numbat-dash.git"
+  },
+  "scripts": {
+    "test": "lab -v -c test/test*.js"
+  }
 }
