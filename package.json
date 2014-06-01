@@ -1,5 +1,5 @@
 {
-  "name": "numbat-dash",
+  "name": "numbat-analyzer",
   "description": "dashboard/alert/monitor for the numbat-powered metrics system",
   "version": "0.0.0",
   "author": "C J Silverio <ceejceej@gmail.com>",
@@ -7,11 +7,16 @@
     "url": "https://github.com/ceejbot/numbat-emitter/issues"
   },
   "dependencies": {
+    "bistre": "0.0.1",
     "bluebird": "^1.2.4",
+    "bole": "^0.1.0",
     "express": "^4.3.1",
+    "influx": "^0.4.0",
     "jade": "^1.3.1",
+    "json-stream": "^0.2.1",
     "lodash": "^2.4.1",
     "rickshaw": "^1.4.6",
+    "socket.io": "^1.0.3",
     "toml-require": "^1.0.1"
   },
   "devDependencies": {
@@ -33,6 +38,7 @@
     "url": "git://github.com/ceejbot/numbat-dash.git"
   },
   "scripts": {
-    "test": "lab -v -c test/test*.js"
+    "test": "lab -v -c test/test*.js",
+    "example": "NODE_ENV=dev ./bin/run-server.js examples/config.js | bistre"
   }
 }
