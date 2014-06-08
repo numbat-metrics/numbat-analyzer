@@ -1,0 +1,22 @@
+{
+  "name": "numbat-analyzer",
+  "main": "index.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ceejbot/numbat-analyzer",
+  "authors": [
+    "C J Silverio <ceej@npmjs.com>"
+  ],
+  "description": "this exist only to let me install bootstrap",
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1"
+  }
+}

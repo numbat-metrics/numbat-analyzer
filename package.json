@@ -11,11 +11,13 @@
     "bluebird": "^1.2.4",
     "body-parser": "^1.3.0",
     "bole": "^0.1.0",
+    "d3": "^3.4.8",
     "express": "^4.4.1",
     "influx": "^0.4.0",
     "jade": "^1.3.1",
     "json-stream": "^0.2.1",
     "lodash": "^2.4.1",
+    "moment": "^2.6.0",
     "morgan": "^1.1.1",
     "rickshaw": "^1.4.6",
     "serve-favicon": "^2.0.1",
@@ -24,8 +26,10 @@
     "ttl-pool": "^1.0.0"
   },
   "devDependencies": {
-    "browserify": "^4.1.5",
+    "bistre": "0.0.1",
+    "browserify": "^4.1.8",
     "lab": "^3.2.1",
+    "less": "^1.7.1",
     "must": "^0.11.0"
   },
   "keywords": [
