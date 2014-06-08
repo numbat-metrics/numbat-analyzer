@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        title numbat || dashboard
+        block styles
+            link(href='//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', rel='stylesheet')
+            link(rel='stylesheet', href='/css/numbat.css')
+            link(rel='stylesheet', href='/css/style.css')
+            link(rel='stylesheet', href='//yandex.st/highlightjs/8.0/styles/solarized_dark.min.css')
+        block scripts
+    body
+        block navbar
+            include partials/nav
+        .container
+            .row
+                .col-sm-9
+                    block content
+                .col-sm-3
+                    block sidebar
+                        p Mission statement here.
+                        p Other actions here.
+        block footer
+            include partials/footer
+        block trailers
+            script(src='http://code.jquery.com/jquery.js')
+            script(src='/js/bootstrap.min.js')

@@ -11,3 +11,6 @@ config.log = createLogger(config.logging);
 
 var server = new Analyzer(config);
 server.listen();
+
+var dash = new Analyzer.Dashboard(config.dashboard);
+dash.listen();

@@ -1,0 +1,24 @@
+- if (locals.flash.error.length)
+	.container
+		.alert.alert-danger.col-8-lg
+			button.close(type="button", data-dismiss="alert") &times;
+			- for (var i = 0; i < locals.flash.error.length; i++)
+				= locals.flash.error[i]
+- if (locals.flash.warning.length)
+	.container
+		.alert.alert-warn.col-8-lg
+			button.close(type="button", data-dismiss="alert") &times;
+			- for (var i = 0; i < locals.flash.warning.length; i++)
+				= locals.flash.warning[i]
+- if (locals.flash.info.length)
+	.container
+		.alert.alert-info.col-8-lg
+			button.close(type="button", data-dismiss="alert") &times;
+			- for (var i = 0; i < locals.flash.info.length; i++)
+				= locals.flash.info[i]
+- if (locals.flash.success.length)
+	.container
+		.alert.alert-success.col-8-lg
+			button.close(type="button", data-dismiss="alert") &times;
+			- for (var i = 0; i < locals.flash.success.length; i++)
+				= locals.flash.success[i]
