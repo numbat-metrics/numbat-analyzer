@@ -1,7 +1,15 @@
+var Analyzer = require('../');
 
-module.exports =
+var analyzer = new Analyzer(
 {
-    rules: require('./ruleset'),
-    incoming: { host: 'localhost', port: 3337 },
-    dashboard: { port: 3338 },
-};
+    listen: { host: 'localhost', port: 3337 },
+    rules: require('./ruleset')
+});
+
+require('bole').output(
+{
+    level: 'debug',
+    stream: process.stderr
+});
+
+analyzer.listen();
