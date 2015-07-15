@@ -1,7 +1,8 @@
 var
     EchoRule  = require('../lib/rules/echo.js'),
     Heartbeat = require('../lib/rules/heartbeat.js'),
-    LoadAverage = require('../lib/rules/load-average.js')
+    LoadAverage = require('../lib/rules/load-average.js'),
+    Memory = require('../lib/rules/memory.js')
     ;
 
 var rules = [];
@@ -23,6 +24,6 @@ rules.push(new LoadAverage({
 rules.push(new Memory({
     warn: 0.7,
     critical: 0.9
-});
+}));
 
 module.exports = rules;
