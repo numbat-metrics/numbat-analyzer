@@ -20,5 +20,9 @@ rules.push(new LoadAverage({
         15: 1.5
     }
 }));
+rules.push(new Memory({
+    warn: 0.7,
+    critical: 0.9
+});
 
 module.exports = rules;
