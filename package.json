@@ -9,11 +9,11 @@
   "dependencies": {
     "bistre": "~1.0.1",
     "blanket": "~1.1.7",
-    "bluebird": "~2.9.30",
+    "bluebird": "~3.0.0",
     "bole": "~2.0.0",
-    "influx": "~3.4.0",
+    "influx": "~4.0.1",
     "json-stream": "~1.0.0",
-    "lodash": "~3.9.3",
+    "lodash": "~3.10.1",
     "mocoverage": "~1.0.0",
     "moment": "~2.10.3",
     "toml-require": "^1.0.1",
@@ -21,9 +21,9 @@
     "ttl-pool": "^1.0.0"
   },
   "devDependencies": {
-    "lab": "^3.2.1",
-    "mocha": "~2.2.5",
-    "must": "~0.12.0"
+    "lab": "^7.0.0",
+    "mocha": "~2.3.3",
+    "must": "~0.13.1"
   },
   "keywords": [
     "numbat",
