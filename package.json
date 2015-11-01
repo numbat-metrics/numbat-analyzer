@@ -9,7 +9,7 @@
   "dependencies": {
     "bistre": "~1.0.1",
     "blanket": "~1.1.7",
-    "bluebird": "~3.0.1",
+    "bluebird": "~3.0.4",
     "bole": "~2.0.0",
     "json-stream": "~1.0.0",
     "lodash": "~3.10.1",
