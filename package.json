@@ -20,7 +20,7 @@
     "ttl-pool": "^1.0.0"
   },
   "devDependencies": {
-    "mocha": "~2.3.3",
+    "mocha": "~2.3.4",
     "must": "~0.13.1"
   },
   "keywords": [
