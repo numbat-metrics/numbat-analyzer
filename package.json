@@ -18,16 +18,19 @@
   },
   "devDependencies": {
     "blanket": "~1.2.1",
-    "mocoverage": "~1.0.0",
+    "eslint": "~1.10.3",
     "mocha": "~2.3.4",
-    "must": "~0.13.1"
+    "mocoverage": "~1.0.0",
+    "must": "~0.13.1",
+    "nyc": "~5.0.1"
   },
+  "homepage": "https://github.com/ceejbot/numbat-emitter",
   "keywords": [
-    "numbat",
+    "alerting",
     "dashboard",
-    "monitoring",
     "metrics",
-    "alerting"
+    "monitoring",
+    "numbat"
   ],
   "license": "ISC",
   "main": "index.js",
@@ -36,7 +39,8 @@
     "url": "git://github.com/ceejbot/numbat-dash.git"
   },
   "scripts": {
-    "test": "mocha -R spec test/test*.js",
-    "dev": "NODE_ENV=dev ./bin/run-server.js examples/config.js | bistre --time"
+    "dev": "NODE_ENV=dev ./bin/run-server.js examples/config.js | bistre --time",
+    "lint": "eslint bin lib test index.js server.js",
+    "test": "mocha -R spec test/"
   }
 }

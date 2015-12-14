@@ -6,7 +6,7 @@ This is the same approach I wanted in my initial spike, only instead of writing 
 
 ## The system
 
-Proposed design:
+Design:
 
 - There's a cluster of [InfluxDB](http://influxdb.com)s.
 - Each host runs a [numbat-collector](https://github.com/ceejbot/numbat-collector).

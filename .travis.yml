@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+    - "0.10"
+    - '4.2'
+    - '5.1'
+script:
+    - npm run test-travis
+sudo: false
