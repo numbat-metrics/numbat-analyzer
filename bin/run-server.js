@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var
-	Analyzer     = require('../index'),
+	Analyzer     = require('../index').Analyzer,
 	createLogger = require('../lib/logging'),
 	path         = require('path')
 	;
