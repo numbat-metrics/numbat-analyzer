@@ -21,7 +21,8 @@
     "mocha": "~2.3.4",
     "mocoverage": "~1.0.0",
     "must": "~0.13.1",
-    "nyc": "~5.0.0"
+    "nyc": "~5.0.0",
+    "sinon": "~1.17.2"
   },
   "homepage": "https://github.com/ceejbot/numbat-emitter",
   "keywords": [
