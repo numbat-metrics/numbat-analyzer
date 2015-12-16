@@ -1,5 +1,4 @@
 var
-    EchoRule  = require('../lib/rules/echo.js'),
     Heartbeat = require('../lib/rules/heartbeat.js'),
     LoadAverage = require('../lib/rules/load-average.js'),
     Memory = require('../lib/rules/memory.js')
@@ -7,7 +6,6 @@ var
 
 var rules = [];
 
-rules.push(new EchoRule());
 rules.push(new Heartbeat());
 rules.push(new LoadAverage({
     warn: {
