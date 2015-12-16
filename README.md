@@ -4,7 +4,21 @@ An alerting engine for the numbat-powered metrics & monitoring system.
 
 This is the same approach I wanted in my initial spike, only instead of writing a custom collector & using an existing alerting engine (riemann), I'm writing the collector *and* the alerting engine.
 
-## The system
+## How to run
+
+```
+Usage: bin/run-server.js --listen localhost:3333 config.json
+
+Options:
+  -l, --listen  host:port pair to listen on            [default: "0.0.0.0:3337"]
+  --silent      silence analyzer-specific logging     [boolean] [default: false]
+  --version     show version information                               [boolean]
+  -h, --help    Show help                                              [boolean]  
+```
+
+An example configuration file using the provided rules is in [examples/config.js](./examples.config.js).
+
+## The numbat system
 
 Design:
 
@@ -87,6 +101,6 @@ Example automatic rule: _heartbeats_. Once a heartbeat is received from a node, 
 
 All incoming data points may have a status field. If they have a status field, this is examined for nagios-style warning levels.
 
-## Open questions
+## license
 
-How much hacking up of grafana is required? E.g., can it overlay annotations on graphs? Would prefer to make a customized dashboard set for it.
+ISC
