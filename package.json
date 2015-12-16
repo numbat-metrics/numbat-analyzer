@@ -14,7 +14,6 @@
     "lodash": "~3.10.1",
     "moment": "~2.10.3",
     "request": "~2.60.0",
-    "toml-require": "^1.0.1",
     "travis-cov": "~0.2.5",
     "ttl-pool": "^1.0.0"
   },

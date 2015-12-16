@@ -23,6 +23,8 @@ An example setup might look like this, with many service/collector pairs:
 
 ![](docs/processing_metrics.png)
 
+NOTE: This is essentially what we run in production at npm, but the documentation for this component is lagging way behind.
+
 ### Data flow
 
 Implications:
@@ -40,15 +42,15 @@ The piece that needs to be written:
 [numbat-collector](https://github.com/ceejbot/numbat-collector): receiver that runs on every host  
 `numbat-analyzer`: a server that accepts data streams from the collector & processes them
 
-- processing rules are javascript snippets
+- processing rules are *duplex streams*
 - probably a directory full of them that gets auto-reloaded? static on startup initially, though
-- sends generated events back to influxdb
-- websockets/whatever to push updates from monitoring layer to the dashboard
+- rules write out actionable items (alerts, new data, etc)
+- sends generated events back to any configured output
 
 Outgoing integrations:
 
 - pagerduty
-- slack messages
+- slack messages (this is an existing output rule)
 
 ### What does a metric data point look like?
 
@@ -58,12 +60,13 @@ It must be a valid InfluxDB data point. Inspired by Riemann's events.
 {
     host: 'hostname.example.com',
     name: 'name.of.metric',
-    tags: ['array', 'of', 'tags'],
     status: 'okay' | 'warning' | 'critical' | 'unknown',
     description: 'textual description',
     time: ts-in-ms,
     ttl: ms-to-live,
-    value: 42
+    value: 42,
+    field: 'abitrary data',
+    field2: 'another tag'
 }
 ```
 
