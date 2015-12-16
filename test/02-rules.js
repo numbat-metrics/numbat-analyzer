@@ -46,7 +46,7 @@ describe('heartbeat', function()
 	{
 		Rules.Heartbeat.must.be.a.function();
 		var heartbeat = new Rules.Heartbeat();
-		heartbeat.must.be.instanceof(stream.Writable);
+		heartbeat.must.be.instanceof(stream.Duplex);
 	});
 });
 
@@ -58,7 +58,7 @@ describe('load-average', function()
 	{
 		Rules.Loadaverage.must.be.a.function();
 		var lav = new Rules.Loadaverage();
-		lav.must.be.instanceof(stream.Writable);
+		lav.must.be.instanceof(stream.Duplex);
 	});
 });
 
@@ -70,6 +70,6 @@ describe('memory', function()
 	{
 		Rules.Memory.must.be.a.function();
 		var memory = new Rules.Memory();
-		memory.must.be.instanceof(stream.Writable);
+		memory.must.be.instanceof(stream.Duplex);
 	});
 });
