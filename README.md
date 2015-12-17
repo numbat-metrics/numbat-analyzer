@@ -16,7 +16,7 @@ Options:
   -h, --help    Show help                                              [boolean]  
 ```
 
-An example configuration file using the provided rules is in [examples/config.js](./examples.config.js).
+An example configuration file using the provided rules is in [examples/config.js](https://github.com/ceejbot/numbat-analyzer/blob/master/examples/config.js).
 
 ## The numbat system
 
