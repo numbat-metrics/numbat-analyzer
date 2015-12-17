@@ -2,7 +2,7 @@
 
 An alerting engine for the numbat-powered metrics & monitoring system.
 
-This is the same approach I wanted in my initial spike, only instead of writing a custom collector & using an existing alerting engine (riemann), I'm writing the collector *and* the alerting engine.
+[![npm](http://img.shields.io/npm/v/numbat-analyzer.svg?style=flat)](https://www.npmjs.org/package/numbat-analyzer) [![Tests](http://img.shields.io/travis/ceejbot/numbat-analyzer.svg?style=flat)](http://travis-ci.org/ceejbot/numbat-analyzer) ![Coverage](http://img.shields.io/badge/coverage-46%25-red.svg?style=flat)    [![Dependencies](https://david-dm.org/ceejbot/numbat-analyzer.svg)](https://david-dm.org/ceejbot/numbat-analyzer)
 
 ## How to run
 
