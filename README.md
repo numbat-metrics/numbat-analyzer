@@ -39,6 +39,12 @@ An example setup might look like this, with many service/collector pairs:
 
 NOTE: This is essentially what we run in production at npm, but the documentation for this component is lagging way behind.
 
+The other important modules:
+
+[numbat-emitter](https://github.com/ceejbot/numbat-emitter): a module you're intended to require anywhere you need it. Make an emitter object, hang onto it, emit metrics with it.  
+[numbat-collector](https://github.com/ceejbot/numbat-collector): receiver that runs on every host  
+`numbat-analyzer`: a server that accepts data streams from the collector & processes them
+
 ### Data flow
 
 Implications:
@@ -49,12 +55,6 @@ Implications:
 - Dashboard should link to the matching Grafana historical data displays for each metric.
 
 CONSIDER: dashboard data displays *are* grafana, just of a different slice of influxdb data (rotated out regularly?) Dashboard page then becomes grafana with the alert stuff in an iframe or something like that. In this approach, the dashboard service is an extra-complex configurable set of hekad-style rules in javascript instead of Lua.
-
-The piece that needs to be written:
-
-[numbat-emitter](https://github.com/ceejbot/numbat-emitter): a module you're intended to require anywhere you need it. Make an emitter object, hang onto it, emit metrics with it.  
-[numbat-collector](https://github.com/ceejbot/numbat-collector): receiver that runs on every host  
-`numbat-analyzer`: a server that accepts data streams from the collector & processes them
 
 - processing rules are *duplex streams*
 - probably a directory full of them that gets auto-reloaded? static on startup initially, though
