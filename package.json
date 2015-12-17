@@ -3,6 +3,9 @@
   "description": "dashboard/alert/monitor for the numbat-powered metrics system",
   "version": "0.0.0",
   "author": "C J Silverio <ceejceej@gmail.com>",
+  "bin": {
+    "numbat-analyzer": "bin/run-server.js"
+  },
   "bugs": {
     "url": "https://github.com/ceejbot/numbat-emitter/issues"
   },
