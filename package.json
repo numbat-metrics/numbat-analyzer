@@ -8,25 +8,29 @@
   },
   "dependencies": {
     "bistre": "~1.0.1",
-    "bluebird": "~3.0.6",
+    "bluebird": "~3.1.1",
     "bole": "~2.0.0",
     "json-stream": "~1.0.0",
     "lodash": "~3.10.1",
     "moment": "~2.10.3",
-    "travis-cov": "~0.2.5",
-    "ttl-pool": "^1.0.0"
+    "request": "~2.67.0",
+    "ttl-pool": "^1.0.0",
+    "yargs": "~3.31.0"
   },
   "devDependencies": {
-    "blanket": "~1.2.1",
-    "mocoverage": "~1.0.0",
+    "eslint": "~1.10.3",
     "mocha": "~2.3.4",
-    "must": "~0.13.1"
+    "must": "~0.13.1",
+    "nyc": "~5.0.0",
+    "sinon": "~1.17.2"
   },
+  "homepage": "https://github.com/ceejbot/numbat-emitter",
   "keywords": [
-    "numbat",
+    "alerting",
     "dashboard",
-    "monitoring",
     "metrics",
+    "monitoring",
+    "numbat",
     "alerting"
   ],
   "license": "ISC",
@@ -36,7 +40,9 @@
     "url": "git://github.com/ceejbot/numbat-dash.git"
   },
   "scripts": {
-    "test": "mocha -R spec test/test*.js",
-    "dev": "NODE_ENV=dev ./bin/run-server.js examples/config.js | bistre --time"
+    "dev": "NODE_ENV=dev ./bin/run-server.js ../examples/config.js | bistre --time",
+    "lint": "eslint bin lib test index.js server.js",
+    "test": "nyc mocha -R spec test",
+    "travis": "npm run lint && mocha -R spec test"
   }
 }
