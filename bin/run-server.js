@@ -5,6 +5,7 @@ var
 	Analyzer = require('../index').Analyzer,
 	assert   = require('assert'),
 	bole     = require('bole'),
+	path     = require('path'),
 	argv     = require('yargs')
 		.option('l', {
 			alias: 'listen',
@@ -27,22 +28,20 @@ var
 	;
 
 // set up logging
-var outputs = [];
 if (!argv.silent)
 {
 	if (process.env.NODE_ENV === 'dev')
 	{
-		var prettystream = require('bistre')();
+		var prettystream = require('bistre')({time: true});
 		prettystream.pipe(process.stdout);
-		outputs.push({ level:  'debug', stream: prettystream });
+		bole.output({ level: 'debug', stream: prettystream });
 	}
 	else
-		outputs.push({level: 'info', stream: process.stdout});
+		bole.output({level: 'info', stream: process.stdout});
 }
-bole.output(outputs);
 var logger = bole('config');
 
-var config = require(argv._[0]);
+var config = require(path.resolve(process.cwd(), argv._[0]));
 assert(config.rules, 'You must provide a rule set in the `rules` section of your config.');
 
 var pair = argv.listen.split(':');
@@ -54,8 +53,6 @@ var runoptions = {
 	rules: [],
 	outputs: []
 };
-
-console.log(__dirname);
 
 // Now we attempt to load the requested modules & yell if we can't.
 _.each(config.rules, function(config, name)
