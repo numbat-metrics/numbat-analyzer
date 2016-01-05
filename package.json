@@ -24,7 +24,7 @@
     "eslint": "~1.10.3",
     "mocha": "~2.3.4",
     "must": "~0.13.1",
-    "nyc": "~5.2.0",
+    "nyc": "~5.3.0",
     "sinon": "~1.17.2"
   },
   "homepage": "https://github.com/ceejbot/numbat-emitter",
