@@ -14,7 +14,7 @@
     "bluebird": "~3.1.1",
     "bole": "~2.0.0",
     "json-stream": "~1.0.0",
-    "lodash": "~3.10.1",
+    "lodash": "~4.0.0",
     "moment": "~2.11.0",
     "request": "~2.67.0",
     "ttl-pool": "^1.0.0",
