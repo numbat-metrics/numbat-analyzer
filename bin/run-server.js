@@ -6,6 +6,7 @@ var
 	assert   = require('assert'),
 	bole     = require('bole'),
 	path     = require('path'),
+	redis    = require('redis'),
 	argv     = require('yargs')
 		.option('l', {
 			alias: 'listen',
@@ -43,6 +44,8 @@ var logger = bole('config');
 
 var config = require(path.resolve(process.cwd(), argv._[0]));
 assert(config.rules, 'You must provide a rule set in the `rules` section of your config.');
+if (process.env.REDIS_URL)
+	config.redis = redis.createClient(process.env.REDIS_URL);
 
 var pair = argv.listen.split(':');
 var runoptions = {
