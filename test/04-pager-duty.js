@@ -17,7 +17,7 @@ describe('pager duty output', function()
 
 	var alert = {
 		id: 'localhost.testmetric',
-		status: 'warning',
+		status: 'critical',
 		name: 'testmetric',
 		value: 9001,
 		message: 'this is quite bad'
@@ -35,21 +35,50 @@ describe('pager duty output', function()
 	it('can be constructed', function()
 	{
 		pdOutput = new PD({ redis: redis.createClient()});
+		pdOutput.must.be.instanceOf(PD);
+		pdOutput.must.have.property('redis');
+		pdOutput.redis.must.be.an.object();
+		pdOutput.alertWhenMatch.must.eql(/^critical$/);
+	});
+
+	it('respects the "alertWhenMatch" option', function()
+	{
+		var output = new PD({ alertWhenMatch: /snort/ });
+		output.alertWhenMatch.must.eql(/snort/);
+	});
+
+	it('does not create an incident for non-critical statuses', function(done)
+	{
+		var warningOnly = _.clone(alert);
+		warningOnly.status = 'warning';
+
+		var spy = sinon.spy(pdOutput, 'handleAlert');
+
+		pdOutput.write(warningOnly, function(err)
+		{
+			demand(err).not.exist();
+			spy.called.must.be.false();
+			spy.restore();
+			done();
+		});
 	});
 
 	it('calls trigger() to create a pagerduty alert on new incidents', function(done)
 	{
-		var spy = sinon.spy(pdOutput.logger, 'info');
+		var triggerSpy = sinon.spy(pdOutput, 'handleAlert');
+		var loggerSpy = sinon.spy(pdOutput.logger, 'info');
 		var redisSpy = sinon.spy(pdOutput.redis, 'set');
 
 		pdOutput.write(alert, function(err)
 		{
 			demand(err).not.exist();
+			triggerSpy.called.must.be.true();
+			triggerSpy.restore();
 			redisSpy.called.must.be.true();
 			redisSpy.restore();
-			spy.calledOnce.must.be.true();
-			spy.args[0][0].must.match(/triggered alert/);
-			spy.restore();
+			loggerSpy.calledOnce.must.be.true();
+			loggerSpy.args[0][0].must.match(/triggered alert/);
+			loggerSpy.restore();
 			done();
 		});
 	});
