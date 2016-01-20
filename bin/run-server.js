@@ -44,8 +44,8 @@ var logger = bole('config');
 
 var config = require(path.resolve(process.cwd(), argv._[0]));
 assert(config.rules, 'You must provide a rule set in the `rules` section of your config.');
-if (process.env.REDIS_URL)
-	config.redis = redis.createClient(process.env.REDIS_URL);
+if (process.env.REDIS_URL || process.env.REDIS)
+	config.redis = redis.createClient(process.env.REDIS_URL || process.env.REDIS);
 
 var pair = argv.listen.split(':');
 var runoptions = {
