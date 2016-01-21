@@ -47,7 +47,7 @@
   "scripts": {
     "dev": "NODE_ENV=dev REDIS_URL=redis://localhost:6379 ./bin/run-server.js examples/config.js",
     "lint": "eslint bin lib test index.js server.js",
-    "test": "nyc mocha -R spec test",
+    "test": "nyc mocha --timeout 8000 -R spec test",
     "travis": "npm run lint && mocha -R spec test"
   }
 }
