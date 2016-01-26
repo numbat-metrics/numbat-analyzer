@@ -2,7 +2,7 @@
 
 An alerting engine for the numbat-powered metrics & monitoring system.
 
-[![npm](http://img.shields.io/npm/v/numbat-analyzer.svg?style=flat)](https://www.npmjs.org/package/numbat-analyzer) [![Tests](http://img.shields.io/travis/ceejbot/numbat-analyzer.svg?style=flat)](http://travis-ci.org/ceejbot/numbat-analyzer) ![Coverage](http://img.shields.io/badge/coverage-46%25-red.svg?style=flat)    [![Dependencies](https://david-dm.org/ceejbot/numbat-analyzer.svg)](https://david-dm.org/ceejbot/numbat-analyzer)
+[![npm](http://img.shields.io/npm/v/numbat-analyzer.svg?style=flat)](https://www.npmjs.org/package/numbat-analyzer) [![Tests](http://img.shields.io/travis/numbat-metrics/numbat-analyzer.svg?style=flat)](http://travis-ci.org/numbat-metrics/numbat-analyzer) ![Coverage](http://img.shields.io/badge/coverage-46%25-red.svg?style=flat)    [![Dependencies](https://david-dm.org/numbat-metrics/numbat-analyzer.svg)](https://david-dm.org/numbat-metrics/numbat-analyzer)
 
 ## How to run
 
@@ -16,14 +16,14 @@ Options:
   -h, --help    Show help                                              [boolean]  
 ```
 
-An example configuration file using the provided rules is in [examples/config.js](https://github.com/ceejbot/numbat-analyzer/blob/master/examples/config.js).
+An example configuration file using the provided rules is in [examples/config.js](https://github.com/numbat-metrics/numbat-analyzer/blob/master/examples/config.js).
 
 ## The numbat system
 
 Design:
 
 - There's a cluster of [InfluxDB](http://influxdb.com)s.
-- Each host runs a [numbat-collector](https://github.com/ceejbot/numbat-collector).
+- Each host runs a [numbat-collector](https://github.com/numbat-metrics/numbat-collector).
 - Each service has a client that sends a heartbeat to `numbat-collector`.
 - Each service also sends interesting datapoints to `numbat-collector`.
 - The per-host collectors send all data to InfluxDB.
@@ -41,8 +41,8 @@ NOTE: This is essentially what we run in production at npm, but the documentatio
 
 The other important modules:
 
-[numbat-emitter](https://github.com/ceejbot/numbat-emitter): a module you're intended to require anywhere you need it. Make an emitter object, hang onto it, emit metrics with it.  
-[numbat-collector](https://github.com/ceejbot/numbat-collector): receiver that runs on every host  
+[numbat-emitter](https://github.com/numbat-metrics/numbat-emitter): a module you're intended to require anywhere you need it. Make an emitter object, hang onto it, emit metrics with it.  
+[numbat-collector](https://github.com/numbat-metrics/numbat-collector): receiver that runs on every host  
 `numbat-analyzer`: a server that accepts data streams from the collector & processes them
 
 ### Data flow
