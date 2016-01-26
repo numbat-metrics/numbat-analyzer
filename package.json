@@ -7,7 +7,7 @@
     "numbat-analyzer": "bin/run-server.js"
   },
   "bugs": {
-    "url": "https://github.com/ceejbot/numbat-analyzer/issues"
+    "url": "https://github.com/numbat-metrics/numbat-analyzer/issues"
   },
   "dependencies": {
     "bistre": "~1.0.1",
@@ -29,20 +29,20 @@
     "nyc": "~5.3.0",
     "sinon": "~1.17.2"
   },
-  "homepage": "https://github.com/ceejbot/numbat-analyzer",
+  "homepage": "https://github.com/numbat-metrics/numbat-analyzer",
   "keywords": [
+    "alerting",
     "alerting",
     "dashboard",
     "metrics",
     "monitoring",
-    "numbat",
-    "alerting"
+    "numbat"
   ],
   "license": "ISC",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/ceejbot/numbat-analyzer.git"
+    "url": "git://github.com/numbat-metrics/numbat-analyzer.git"
   },
   "scripts": {
     "dev": "NODE_ENV=dev REDIS_URL=redis://localhost:6379 ./bin/run-server.js examples/config.js",
