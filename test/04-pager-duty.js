@@ -6,14 +6,12 @@ var
 	demand  = require('must'),
 	PD      = require('../lib/outputs/pagerduty'),
 	redis   = require('redis'),
-	sinon   = require('sinon'),
-	trigger = require('pagerduty-trigger')
+	sinon   = require('sinon')
 	;
 
 describe('pager duty output', function()
 {
 	var pdOutput, savedPDKey, savedPDService;
-	var incidentID;
 
 	var alert = {
 		id: 'localhost.testmetric',
@@ -29,7 +27,7 @@ describe('pager duty output', function()
 		process.env.PAGER_DUTY_SERVICE = 'e93facc04764012d7bfb002500d5d1a6';
 
 		savedPDKey = process.env.PAGER_DUTY_API_KEY;
-		process.env.PAGER_DUTY_API_KEY = 'e93facc04764012d7bfb002500d5d1a6'
+		process.env.PAGER_DUTY_API_KEY = 'e93facc04764012d7bfb002500d5d1a6';
 	});
 
 	it('can be constructed', function()
@@ -89,7 +87,6 @@ describe('pager duty output', function()
 		{
 			demand(err).not.exist();
 			result.must.be.a.string();
-			incidentID = result;
 			done();
 		});
 	});
