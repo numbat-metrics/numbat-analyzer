@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "bistre": "~1.0.1",
-    "bluebird": "~3.1.1",
+    "bluebird": "~3.2.2",
     "bole": "~2.0.0",
     "json-stream": "~1.0.0",
     "lodash": "~4.1.0",
