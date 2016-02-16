@@ -14,7 +14,7 @@
     "bluebird": "~3.2.2",
     "bole": "~2.0.0",
     "json-stream": "~1.0.0",
-    "lodash": "~4.3.0",
+    "lodash": "~4.4.0",
     "moment": "~2.11.0",
     "pagerduty-trigger": "git+https://github.com/snopeks/pagerduty-trigger.git#master",
     "redis": "~2.4.2",
