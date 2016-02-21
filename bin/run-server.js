@@ -71,7 +71,7 @@ _.each(config.rules, function(ruleConfig, name)
 		logger.warn('could not load rule ' + name);
 });
 
-_.each(config.outputs, function(config, name)
+_.each(config.outputs, function(ruleConfig, name)
 {
 	ruleConfig.redis = config.redis;
 	var item = construct('outputs', name, ruleConfig);
