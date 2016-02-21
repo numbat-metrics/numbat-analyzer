@@ -58,9 +58,10 @@ var runoptions = {
 };
 
 // Now we attempt to load the requested modules & yell if we can't.
-_.each(config.rules, function(config, name)
+_.each(config.rules, function(ruleConfig, name)
 {
-	var item = construct('rules', name, config);
+	ruleConfig.redis = config.redis;
+	var item = construct('rules', name, ruleConfig);
 	if (item)
 	{
 		runoptions.rules.push(item);
@@ -72,7 +73,8 @@ _.each(config.rules, function(config, name)
 
 _.each(config.outputs, function(config, name)
 {
-	var item = construct('outputs', name, config);
+	ruleConfig.redis = config.redis;
+	var item = construct('outputs', name, ruleConfig);
 	if (item)
 	{
 		runoptions.outputs.push(item);
