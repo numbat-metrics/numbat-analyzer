@@ -10,7 +10,7 @@ var
 
 describe('status rates', function()
 {
-	var rateChecker = new Rates({ interval: 500, rateAllowed: 0.5 });
+	var rateChecker = new Rates({ interval: 250, rateAllowed: 0.5 });
 
 	it('can be constructed', function()
 	{
@@ -68,7 +68,7 @@ describe('status rates', function()
 			spy.calledWith('app').must.be.true();
 			spy.restore();
 			done();
-		}, 1000);
+		}, 500);
 	});
 
 	it('writes an alert when the rate exceeds the allowed rate', function(done)
@@ -91,7 +91,7 @@ describe('status rates', function()
 				alert.status.must.match(/critical|warning/);
 				alert.must.have.property('value');
 				done();
-			}, 1000);
+			}, 500);
 		});
 	});
 
@@ -104,12 +104,9 @@ describe('status rates', function()
 
 		setTimeout(function()
 		{
-			var next = rateChecker.read(), alert;
-			while (next)
-			{
+			var next, alert;
+			while (next = rateChecker.read())
 				alert = next;
-				next = rateChecker.read();
-			}
 
 			alert.must.be.an.object();
 			alert.must.have.property('statusCode');
@@ -119,7 +116,7 @@ describe('status rates', function()
 			alert.must.have.property('value');
 			alert.value.must.be.below(0.5);
 			done();
-		}, 1000);
+		}, 500);
 	});
 
 });
