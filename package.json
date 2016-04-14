@@ -17,7 +17,7 @@
     "moment": "~2.12.0",
     "pagerduty-trigger": "git+https://github.com/snopeks/pagerduty-trigger.git#master",
     "redis": "~2.5.3",
-    "request": "~2.68.0",
+    "request": "~2.70.0",
     "ttl-pool": "^1.0.0",
     "yargs": "~4.3.1"
   },
