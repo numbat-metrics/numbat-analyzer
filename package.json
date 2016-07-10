@@ -19,7 +19,7 @@
     "redis": "~2.5.3",
     "request": "~2.72.0",
     "ttl-pool": "^1.0.0",
-    "yargs": "~4.3.1"
+    "yargs": "~4.8.0"
   },
   "devDependencies": {
     "eslint": "~2.4.0",
