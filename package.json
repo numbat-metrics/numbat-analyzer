@@ -16,7 +16,7 @@
     "lodash": "~4.11.0",
     "moment": "~2.14.1",
     "pagerduty-trigger": "git+https://github.com/snopeks/pagerduty-trigger.git#master",
-    "redis": "~2.5.3",
+    "redis": "~2.6.0",
     "request": "~2.73.0",
     "ttl-pool": "^1.0.0",
     "yargs": "~4.8.1"
