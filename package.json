@@ -1,7 +1,7 @@
 {
   "name": "numbat-analyzer",
   "description": "dashboard/alert/monitor for the numbat-powered metrics system",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "C J Silverio <ceejceej@gmail.com>",
   "bin": {
     "numbat-analyzer": "bin/run-server.js"
