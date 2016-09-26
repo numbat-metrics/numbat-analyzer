@@ -14,7 +14,7 @@
     "bistre": "~1.0.1",
     "bole": "~3.0.1",
     "json-stream": "~1.0.0",
-    "lodash": "~4.14.0",
+    "lodash": "~4.16.2",
     "moment": "~2.14.1",
     "moving-average": "~0.1.1",
     "redis": "~2.6.2",
