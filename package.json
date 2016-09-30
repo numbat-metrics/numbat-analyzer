@@ -21,7 +21,7 @@
     "request": "~2.74.0",
     "sinon": "~1.17.4",
     "ttl-pool": "^1.0.0",
-    "yargs": "~4.8.1"
+    "yargs": "~6.0.0"
   },
   "devDependencies": {
     "eslint": "~2.9.0",
