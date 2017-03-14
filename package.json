@@ -17,7 +17,7 @@
     "lodash": "~4.14.0",
     "moment": "~2.14.1",
     "moving-average": "~0.1.1",
-    "redis": "~2.6.2",
+    "redis": "~2.7.1",
     "request": "~2.74.0",
     "sinon": "~1.17.4",
     "ttl-pool": "^1.0.0",
