@@ -28,7 +28,7 @@
     "mocha": "~2.5.3",
     "must": "~0.13.2",
     "nyc": "~7.1.0",
-    "sinon": "~1.17.2"
+    "sinon": "~2.1.0"
   },
   "homepage": "https://github.com/numbat-metrics/numbat-analyzer",
   "keywords": [
