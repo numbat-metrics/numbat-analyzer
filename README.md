@@ -1,5 +1,7 @@
 # numbat-analyzer
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/numbat-metrics/numbat-analyzer.svg)](https://greenkeeper.io/)
+
 An alerting engine for the numbat-powered metrics & monitoring system.
 
 [![npm](http://img.shields.io/npm/v/numbat-analyzer.svg?style=flat)](https://www.npmjs.org/package/numbat-analyzer) [![Tests](http://img.shields.io/travis/numbat-metrics/numbat-analyzer.svg?style=flat)](http://travis-ci.org/numbat-metrics/numbat-analyzer) ![Coverage](http://img.shields.io/badge/coverage-46%25-red.svg?style=flat)    [![Dependencies](https://david-dm.org/numbat-metrics/numbat-analyzer.svg)](https://david-dm.org/numbat-metrics/numbat-analyzer)
